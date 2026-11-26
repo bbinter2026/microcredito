@@ -771,6 +771,19 @@ html,body{height:100dvh}
 }
 @media print{#installbtn,.pw-card{display:none!important}}
 @media(prefers-reduced-motion:reduce){.pw-card{animation:none;transform:translateX(-50%)}}
+/* ===== tabelas sem deslizar: viram cartões quando a largura disponível é pequena (janelas, telemóvel, tablet) ===== */
+.tbl-wrap{container-type:inline-size;overflow-x:hidden}
+@container (max-width:780px){
+.tbl,.tbl tbody{display:block;width:100%}
+.tbl thead,.tbl tr:has(>th){display:none}
+.tbl tr{display:block;background:var(--bg-card);border:1px solid var(--border-color);border-radius:14px;margin-bottom:.6rem;padding:.35rem .25rem}
+.tbl td{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.2rem .8rem;border:0;padding:.35rem .6rem;text-align:right;min-width:0}
+.tbl td::before{content:attr(data-l);color:var(--text-muted);font-weight:600;font-size:.72rem;text-transform:uppercase;text-align:left}
+.tbl tr:hover td{background:transparent}
+.tbl td:first-child{font-weight:700;border-bottom:1px solid var(--border-color);margin-bottom:.15rem}
+.tbl td:last-child{justify-content:flex-end;gap:.4rem;flex-wrap:wrap}
+.bar{min-width:120px}}
+.content,.modal,.view,#portal{overflow-x:hidden}.view>*,.panel,.modal>*{min-width:0;max-width:100%}
 </style><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 
 
